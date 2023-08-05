@@ -88,7 +88,7 @@
 	color: var(--verde);
 }
 
-/* * --- --- ---  LISTA TAREAS --- --- --- */
+/* * --- --- ---  LIST TASKS --- --- --- */
 
 .list-tasks {
 	list-style: none;
@@ -146,12 +146,12 @@
 	padding: 40px 20px;
 }
 
-/* * --- --- ---  FORMULARIO EDITAR TAREA --- --- --- */
-.formulario-editar-tarea {
+/* * --- --- ---  FORM EDIT TASK --- --- --- */
+.form-edit-task {
 	display: flex;
 }
 
-.formulario-editar-tarea__input {
+.form-edit-task__input {
 	width: 100%;
 	border: none;
 	border-bottom: 2px solid #b8b8b8;
@@ -161,7 +161,7 @@
 	margin-right: 20px;
 }
 
-.formulario-editar-tarea__btn {
+.form-edit-task__btn {
 	border: none;
 	background: var(--verde);
 	cursor: pointer;

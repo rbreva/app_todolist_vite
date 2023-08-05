@@ -9,7 +9,7 @@ function App() {
       {
         id: 1,
         name: "Learn React 001",
-        completed: false
+        completed: true
       },
       {
         id: 2,
