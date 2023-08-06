@@ -1,30 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
 import FormList from './components/FormList'
 import ListTasks from './components/ListTasks'
 
 function App() {
-  const [tasks, changeTasks] = useState([
-      {
-        id: 1,
-        name: "Learn React 001",
-        completed: true
-      },
-      {
-        id: 2,
-        name: "Learn React 002",
-        completed: false
-      },
-      {
-        id: 3,
-        name: "Learn React 003",
-        completed: false
-      }
-    ]
-  );
+  const tasksStorage = 
+  localStorage.getItem("tasks") ? 
+  JSON.parse(localStorage.getItem("tasks")) : [];
+  const [tasks, changeTasks] = useState(tasksStorage);
 
-  const [showCompleted, changeShowCompleted] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  let configShowCompleted = '';
+  if (localStorage.getItem("showCompleted") === null) {
+    configShowCompleted = true;
+  } else {
+    configShowCompleted = localStorage.getItem("showCompleted") === "true";
+  }
+
+  const [showCompleted, changeShowCompleted] = useState(configShowCompleted);
+  useEffect(() => {
+    localStorage.setItem("showCompleted", showCompleted.toString());
+  }, [showCompleted]);
 
   return (
     <div className="container">

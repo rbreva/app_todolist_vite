@@ -24,6 +24,7 @@ const FormList = ({ tasks, changeTasks }) => {
         }
       ]
     );
+    changeInputTask("");
   }
 
   return (
