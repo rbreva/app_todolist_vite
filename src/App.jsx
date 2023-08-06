@@ -24,13 +24,20 @@ function App() {
     ]
   );
 
-    console.log(tasks);
+  const [showCompleted, changeShowCompleted] = useState(false);
 
   return (
     <div className="container">
-      <Header />
+      <Header 
+        showCompleted={showCompleted} 
+        changeShowCompleted={changeShowCompleted} 
+      />
       <FormList tasks={tasks} changeTasks={changeTasks} />
-      <ListTasks tasks={tasks} changeTasks={changeTasks} />
+      <ListTasks 
+        tasks={tasks} 
+        changeTasks={changeTasks}
+        showCompleted={showCompleted} 
+      />
     </div>
   )
 }
